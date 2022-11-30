@@ -4,12 +4,12 @@ const UserRoute = require("./Routes/userRoute");
 const authRoute = require("./Routes/authRoute");
 const inquiryRouter = require("./Routes/InquiryRoutes");
 const passwordResetRoutes = require("./Routes/passwordResetRoute");
-const carRoute = require("./routes/carRoutesDB");
+const carRoute = require("./Routes/carRoutesDB");
 const faqRoute = require("./Routes/faqRoutes");
 const aboutRoute = require("./Routes/aboutusRoute");
-const feedbackRoute = require("./routes/feedbackRoutes");
+const feedbackRoute = require("./Routes/feedbackRoutes");
 const Aboutus = require("./models/Aboutus");
-const bookingRoute = require("./routes/bookings");
+const bookingRoute = require("./Routes/bookings");
 const connectDB = require("./config/connectDb");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
@@ -49,7 +49,6 @@ app.use(express.json());
 app.use("/api/cars", carRoute);
 app.use("/api/feedbacks", feedbackRoute);
 app.use("/all/api/feedbacks", feedbackRoute);
-
 app.use("/api/user", UserRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/inquiry", inquiryRouter);
@@ -57,7 +56,10 @@ app.use("/api/password-reset", passwordResetRoutes);
 app.use("/api/faq", faqRoute);
 app.use("/api/aboutus", aboutRoute);
 app.use("/api/bookings", bookingRoute);
+
+
 const PORT = process.env.PORT | 5000;
 app.listen(PORT, () => {
   console.log("server started at: ", PORT);
 });
+

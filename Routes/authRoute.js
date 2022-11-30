@@ -5,9 +5,11 @@ require('dotenv').config();
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const authMiddleware = require('../middleWare/authMiddleware');
 
 let User = require('../models/User');
+const authMiddleware = require('../middleWare/authMiddleware');
+
+
 
 router.get('/', authMiddleware, async (req, res) => {
   try {

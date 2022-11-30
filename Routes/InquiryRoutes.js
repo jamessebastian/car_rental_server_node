@@ -1,6 +1,6 @@
 const express = require("express");
-let Inquiries = require("../Models/Inquiry");
-const sendEmail = require("../util/sendEmail");
+let Inquiries = require("../models/Inquiry");
+const sendEmail = require("../util/SendEmail");
 require("dotenv").config();
 const { check, validationResult } = require("express-validator");
 const router = express.Router();
